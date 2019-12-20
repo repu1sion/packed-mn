@@ -21,6 +21,12 @@ nmake -help
 # Test clang
 clang-cl -v
 
+# Test cl
+cl
+
+#echo path
+echo %PATH%
+
 # Copy alias for bison and flex
 $win_bison = where.exe win_bison
 cp $win_bison $win_bison.Replace('win_bison', 'bison')

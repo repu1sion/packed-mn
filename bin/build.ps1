@@ -18,17 +18,19 @@ Get-Content "$env:temp\vcvars.txt" | Foreach-Object {
 # Test nmake
 nmake -help
 
-# Test clang
-clang-cl -v
-
 # Test cl
 cl
 
 # Search for clang-cl
-dir -Path C:\ -Filter clang-cl.exe -Recurse
+# dir -Path C:\ -Filter clang-cl.exe -Recurse
 
 #echo path
-echo %PATH%
+$env:path
+$env:Path += ";C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\Llvm\bin"
+$env:path
+
+# Test clang
+clang-cl -v
 
 # Copy alias for bison and flex
 $win_bison = where.exe win_bison

@@ -24,6 +24,9 @@ clang-cl -v
 # Test cl
 cl
 
+# Search for clang-cl
+dir -Path C:\ -Filter clang-cl.exe -Recurse
+
 #echo path
 echo %PATH%
 

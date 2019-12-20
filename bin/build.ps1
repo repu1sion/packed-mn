@@ -26,8 +26,8 @@ cl
 
 #echo path
 $env:path
-$env:Path += ";C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\Llvm\bin"
-$env:path
+#$env:Path += ";C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\Llvm\bin"
+#$env:path
 
 # Test clang
 clang-cl -v

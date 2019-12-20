@@ -23,8 +23,8 @@ jobs:
       run: choco install --yes squashfs
     - name: Check swap
       run: systeminfo 
-    - name: show path
-      run: echo %PATH%
+    - name: install clang
+      run: choco install --yes llvm
     - name: Run build
       env:
         # CC: "cl -nologo"

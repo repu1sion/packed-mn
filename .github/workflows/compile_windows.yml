@@ -5,12 +5,12 @@ on: [push]
 
 jobs:
   build_windows:
-    runs-on: windows-2016
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v1
     - uses: actions/setup-ruby@v1
       with:
-        ruby-version: '2.5'
+        ruby-version: '2.6'
     # - name: gem version
     #   run: gem -v
     # - name: rubygems update
@@ -21,6 +21,10 @@ jobs:
       run: choco install --yes winflexbison
     - name: Install squashfs
       run: choco install --yes squashfs
+    - name: Check clang
+      run: clang-cl -v
+    - name: Check swap
+      run: systeminfo | find "Virtual Memory"
     - name: Run build
       env:
         # CC: "cl -nologo"

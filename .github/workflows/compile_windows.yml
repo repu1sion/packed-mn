@@ -22,7 +22,7 @@ jobs:
     - name: Install squashfs
       run: choco install --yes squashfs
     - name: Check swap
-      run: systeminfo | find "Virtual Memory"
+      run: systeminfo 
     - name: show path
       run: echo %PATH%
     - name: Run build

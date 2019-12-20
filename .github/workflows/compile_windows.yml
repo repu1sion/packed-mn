@@ -25,11 +25,6 @@ jobs:
       run: systeminfo | find "Virtual Memory"
     - name: show path
       run: echo %PATH%
-    - name: set vc env
-      run: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-    - name: Check clang
-      run: clang-cl -v
-
     - name: Run build
       env:
         # CC: "cl -nologo"

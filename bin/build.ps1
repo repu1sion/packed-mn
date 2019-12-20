@@ -6,7 +6,7 @@
 # }
 
 # Set 64-bit build envs for compiler - START
-cmd.exe /c "call `"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat`" && set > %temp%\vcvars.txt"
+cmd.exe /c "call `"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat`" && set > %temp%\vcvars.txt"
 
 Get-Content "$env:temp\vcvars.txt" | Foreach-Object {
   if ($_ -match "^(.*?)=(.*)$") {
@@ -17,6 +17,10 @@ Get-Content "$env:temp\vcvars.txt" | Foreach-Object {
 
 # Test nmake
 nmake -help
+
+# Test clang
+clang-cl -v
+
 # Copy alias for bison and flex
 $win_bison = where.exe win_bison
 cp $win_bison $win_bison.Replace('win_bison', 'bison')

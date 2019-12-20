@@ -25,6 +25,7 @@ cl
 # dir -Path C:\ -Filter clang-cl.exe -Recurse
 
 #echo path
+refreshenv
 $env:path
 #$env:Path += ";C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\Llvm\bin"
 #$env:path

@@ -27,7 +27,9 @@ jobs:
         # LD: "cl -nologo"
         # LDSHARED: "cl -nologo -LD"
         # # CPPFLAGS: "-fno-use-linker-plugin"
-      run: build.bat
+      run: |
+        bundle install
+        build.bat
     # - name: Install dependencies
     #   run: brew install squashfs
     # - name: Download and install rubyc

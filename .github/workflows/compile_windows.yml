@@ -20,7 +20,7 @@ jobs:
     - name: Check swap
       run: systeminfo 
     - name: Run build
-      env:
+      # env:
         # CC: "cl -nologo"
         # LD: "cl -nologo"
         # LDSHARED: "cl -nologo -LD"

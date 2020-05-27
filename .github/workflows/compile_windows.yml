@@ -17,22 +17,15 @@ jobs:
     #   run: gem update --system 2.6.14
     - name: gem version
       run: gem -v
-    - name: Install winflexbison
-      run: choco install --yes winflexbison
-    - name: Install squashfs
-      run: choco install --yes squashfs
     - name: Check swap
       run: systeminfo 
-    - name: install clang
-      run: choco install --yes llvm
     - name: Run build
       env:
         # CC: "cl -nologo"
         # LD: "cl -nologo"
         # LDSHARED: "cl -nologo -LD"
         # # CPPFLAGS: "-fno-use-linker-plugin"
-        LIBSASS_STATIC_LIB: 1
-      run: PowerShell.exe bin\build.ps1
+      run: cmd.exe ocra\build.bat
     # - name: Install dependencies
     #   run: brew install squashfs
     # - name: Download and install rubyc

@@ -22,12 +22,13 @@ jobs:
     - name: change dir
       run: cd ocra
     - name: Run build
+      shell: cmd
       # env:
         # CC: "cl -nologo"
         # LD: "cl -nologo"
         # LDSHARED: "cl -nologo -LD"
         # # CPPFLAGS: "-fno-use-linker-plugin"
-      run: cmd.exe build.bat
+      run: build.bat
     # - name: Install dependencies
     #   run: brew install squashfs
     # - name: Download and install rubyc

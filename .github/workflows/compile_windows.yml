@@ -19,9 +19,8 @@ jobs:
       run: gem -v
     - name: Check swap
       run: systeminfo 
-    - name: change dir
-      run: cd ocra
     - name: Run build
+      working-directory: .\ocra\
       shell: cmd
       # env:
         # CC: "cl -nologo"

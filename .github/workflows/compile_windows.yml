@@ -19,6 +19,10 @@ jobs:
       run: gem -v
     - name: Check swap
       run: systeminfo 
+    - name: Install gems
+      working-directory: .\ocra\
+      run: 
+        bundle install
     - name: Run build
       working-directory: .\ocra\
       shell: cmd
@@ -27,8 +31,7 @@ jobs:
         # LD: "cl -nologo"
         # LDSHARED: "cl -nologo -LD"
         # # CPPFLAGS: "-fno-use-linker-plugin"
-      run: |
-        bundle install
+      run:
         build.bat
     # - name: Install dependencies
     #   run: brew install squashfs
